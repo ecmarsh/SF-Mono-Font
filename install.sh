@@ -8,5 +8,12 @@ FONTS_DIR="$HOME/Library/Fonts"
 echo "Installing fonts..."
 find "$SF_MONO_DIR" \( -name "SF-Mono*.otf" \) -type f -print0 | xargs -0 -n1 -I % cp "%" "$FONTS_DIR/"
 
-# Confirmation message
-echo "SF Mono installed to $FONTS_DIR"
+# Print confirmation message
+echo "SF Mono installed to $fonts_dir"
+
+# Ask for removal of sf-mono dir
+read -p "Do you want to remove ${sf_mono_dir}? (Y/N) > "
+if [[ "$REPLY" =~ ^[yY] ]]; then
+    rm -r $sf_mono_dir
+    echo "Removed "${sf_mono_dir}/"
+fi
