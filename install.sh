@@ -15,5 +15,5 @@ echo "SF Mono installed to $fonts_dir"
 read -p "Do you want to remove ${sf_mono_dir}? (Y/N) > "
 if [[ "$REPLY" =~ ^[yY] ]]; then
     rm -r $sf_mono_dir
-    echo "Removed "${sf_mono_dir}/"
+    echo "Removed ${sf_mono_dir}/"
 fi
